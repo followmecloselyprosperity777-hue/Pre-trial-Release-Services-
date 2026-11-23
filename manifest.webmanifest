@@ -1,0 +1,23 @@
+{
+  "name": "PocketBolt",
+  "short_name": "PocketBolt",
+  "description": "Send and request money instantly. Test-mode prototype.",
+  "id": "/",
+  "start_url": "/?source=pwa",
+  "scope": "/",
+  "display": "standalone",
+  "display_override": ["standalone", "minimal-ui"],
+  "orientation": "portrait",
+  "background_color": "#0b0f14",
+  "theme_color": "#0b0f14",
+  "categories": ["finance"],
+  "icons": [
+    {"src": "/static/icons/icon-192.png", "sizes": "192x192", "type": "image/png"},
+    {"src": "/static/icons/icon-512.png", "sizes": "512x512", "type": "image/png"},
+    {"src": "/static/icons/maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable"}
+  ],
+  "shortcuts": [
+    {"name": "Pay someone", "url": "/app/pay", "icons": [{"src": "/static/icons/icon-192.png", "sizes": "192x192"}]},
+    {"name": "Activity", "url": "/app/activity", "icons": [{"src": "/static/icons/icon-192.png", "sizes": "192x192"}]}
+  ]
+}
