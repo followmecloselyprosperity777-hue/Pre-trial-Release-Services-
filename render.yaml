@@ -1,0 +1,17 @@
+services:
+  - type: web
+    name: pocketbolt-test
+    runtime: python
+    plan: free
+    buildCommand: pip install -r requirements.txt && python prepare_deploy.py
+    startCommand: python seed.py && gunicorn -w 1 --threads 8 -b 0.0.0.0:$PORT app:app
+    healthCheckPath: /healthz
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.12.8
+      - key: SECRET_KEY
+        generateValue: true
+      - key: COOKIE_SECURE
+        value: "1"
+      - key: POCKETBOLT_DB
+        value: /tmp/pocketbolt.db
